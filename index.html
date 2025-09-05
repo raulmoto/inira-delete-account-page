@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inira · Solicitud de eliminación de cuenta</title>
+  <meta name="description" content="Página oficial para solicitar la eliminación de cuenta y datos asociados en Inira.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root{
+      /* Paleta suave */
+      --brand-1:#8F7AE6;   /* lavanda */
+      --brand-2:#7E5A3B;   /* marrón suave */
+    }
+    .hero{
+      background: radial-gradient(1200px 500px at 20% -10%, #efeaff 0%, #ffffff 40%),
+                  radial-gradient(1200px 500px at 120% 10%, #fff3e8 0%, #ffffff 40%);
+    }
+    .brand-badge{
+      background: linear-gradient(45deg, var(--brand-1), var(--brand-2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      font-weight:800; letter-spacing:.5px;
+    }
+    .card{
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      border-radius: 1rem;
+    }
+    .btn-brand{ background: var(--brand-1); border-color:var(--brand-1); }
+    .btn-brand:hover{ background:#7b67c6; border-color:#7b67c6; }
+    footer a{ color: var(--brand-2); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header class="hero py-5 mb-4">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-lg-8">
+          <span class="brand-badge h5 d-block mb-2">Inira</span>
+          <h1 class="display-6 fw-bold">Solicitud de eliminación de cuenta y datos</h1>
+          <p class="lead text-muted mb-0">
+            Esta página explica cómo pedir la eliminación de tu cuenta y qué datos se eliminan,
+            qué datos debemos conservar y los plazos de respuesta.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container pb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="card p-4 p-md-5">
+          <h2 class="h4 mb-3">Cómo solicitar la eliminación</h2>
+          <p>Envía un correo a <strong>inirahouse@gmail.com</strong> con el <strong>asunto</strong>:
+            <code>solicitud-eliminacion-cuenta</code>. En el cuerpo del mensaje incluye:</p>
+          <ul>
+            <li>Nombre y apellidos.</li>
+            <li><strong>Correo con el que te registraste</strong> o la <strong>cuenta de Google</strong> con la que iniciaste sesión (si accediste como cliente).</li>
+            <li>Rol en la app: <em>Cliente</em> o <em>Trenzadora</em>.</li>
+            <li>(Opcional) UID o cualquier dato adicional que facilite la verificación.</li>
+          </ul>
+
+          <!-- Botón mailto con plantilla -->
+          <a class="btn btn-brand btn-lg mb-4"
+             href="mailto:inirahouse@gmail.com?subject=solicitud-eliminacion-cuenta&body=Hola%20Inira%2C%0A%0ASolicito%20la%20eliminaci%C3%B3n%20de%20mi%20cuenta.%0A%0ADatos%3A%0A-%20Nombre%3A%20%0A-%20Correo%20registrado%20o%20cuenta%20de%20Google%3A%20%0A-%20Rol%20(Cliente%20o%20Trenzadora)%3A%20%0A-%20UID%20(si%20lo%20conoces)%3A%20%0A%0AGracias.">
+            Enviar solicitud por email
+          </a>
+
+          <hr class="my-4">
+
+          <div class="row g-4">
+            <div class="col-md-6">
+              <h3 class="h5">Qué datos se eliminan</h3>
+              <ul class="mb-0">
+                <li>Perfil y credenciales de acceso.</li>
+                <li>Disponibilidades y publicaciones asociadas.</li>
+                <li>Citas del cliente y, si aplica, enlaces a citas confirmadas.</li>
+                <li>Reseñas y fotos publicadas por ti.</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h3 class="h5">Qué datos se conservan</h3>
+              <ul class="mb-0">
+                <li>Registros de pago y facturación (p. ej., Stripe) cuando la ley lo exija.</li>
+                <li>Logs mínimos para seguridad y prevención de fraude por el tiempo legal.</li>
+              </ul>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <h3 class="h5">Plazos y verificación</h3>
+          <ul>
+            <li>Confirmaremos tu identidad desde el mismo correo de la cuenta.</li>
+            <li>Procesamos la solicitud en <strong>≤ 30 días</strong> (habitualmente &lt; 7 días).</li>
+          </ul>
+
+          <div class="alert alert-warning">
+            <strong>Respeto y moderación.</strong> Los mensajes con lenguaje ofensivo o irrespetuoso
+            podrán ser <strong>ignorados</strong>. Priorizamos un entorno seguro y cordial para todos.
+          </div>
+
+          <p class="small text-muted mb-0">
+            Tras la eliminación, si accediste con Google, puedes quitar esa cuenta del dispositivo:
+            <em>Ajustes → Cuentas → Google → Eliminar</em>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-4 border-top">
+    <div class="container small text-muted">
+      <div class="d-flex flex-column flex-md-row justify-content-between">
+        <span>© <span id="y"></span> Inira. Todos los derechos reservados.</span>
+        <span>Contacto soporte: <a href="mailto:inirahouse@gmail.com">inirahouse@gmail.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
